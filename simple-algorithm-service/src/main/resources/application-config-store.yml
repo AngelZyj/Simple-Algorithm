@@ -1,0 +1,16 @@
+algorithm:
+  store:
+    storeType: ${ALGORITHM_STORE_TYPE:LOCAL}
+    oss:
+      endpoint: ep
+      accessKeyId: aki
+      accessKeySecret: aks
+      bucket: ${ALGORITHM_STORE_ROOT_PATH}
+    sftp:
+      hostIp: ${SFTP_HOST:127.0.0.1}
+      username: ${SFTP_USERNAME:tmos}
+      password: ${SFTP_PASSWD:qinghua123%40}
+      remoteRootPath: ${ALGORITHM_STORE_ROOT_PATH:/upload/algorithm/files}
+    local:
+      basePath: ${ALGORITHM_STORE_ROOT_PATH:'/home/tmos/upload/algorithm/files'}
+
