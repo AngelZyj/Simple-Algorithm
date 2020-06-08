@@ -2,6 +2,7 @@ package com.tsintergy.simple.algorithm.service;
 
 import com.tsintergy.simple.algorithm.core.properties.AlgorithmProperties;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 

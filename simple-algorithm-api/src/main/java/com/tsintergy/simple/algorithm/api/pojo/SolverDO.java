@@ -64,13 +64,6 @@ public class SolverDO implements Serializable {
     private String version;
 
     /**
-     * 是否默认求解器
-     */
-    @Basic
-    @Column(name = "DEFAULT_SOLVER",nullable = false)
-    private Boolean defaultSolver;
-
-    /**
      * 从机端口，不知道有什么，南网那版定义的
      */
     @Basic

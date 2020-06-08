@@ -20,6 +20,21 @@ public class InvokeRequestDTO extends BaseRequestDTO {
      */
     private String solverType;
 
+    /**
+     * 版本类型
+     */
+    private String version;
+
+    /**
+     * 输出debug
+     */
+    private Boolean debug;
+
+    /**
+     * 输出模型
+     */
+    private Boolean model;
+
     public String getAlgorithmType() {
         return algorithmType;
     }
@@ -34,5 +49,29 @@ public class InvokeRequestDTO extends BaseRequestDTO {
 
     public void setSolverType(String solverType) {
         this.solverType = solverType;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public Boolean getDebug() {
+        return debug;
+    }
+
+    public void setDebug(Boolean debug) {
+        this.debug = debug;
+    }
+
+    public Boolean getModel() {
+        return model;
+    }
+
+    public void setModel(Boolean model) {
+        this.model = model;
     }
 }

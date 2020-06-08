@@ -25,3 +25,6 @@ tsieLib/
 
 # h2数据库
 *.mv.db
+mvnw.cmd
+mvnw.sh
+mvnw
