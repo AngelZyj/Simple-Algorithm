@@ -15,7 +15,13 @@ public enum ActionStatusEnum {
     /**
      * 无对应算法程序
      */
-    NO_SOLVER(1,"无对应算法程序");
+    NO_SOLVER(1, "无对应算法程序"),
+
+    /**
+     * 下载输入文件失败
+     */
+    DOWNLOAD_INPUT_FAIL(2, "下载输入文件失败"),
+    ;
 
     private final int id;
     private final String text;

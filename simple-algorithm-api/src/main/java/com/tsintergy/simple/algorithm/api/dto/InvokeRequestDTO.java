@@ -26,6 +26,16 @@ public class InvokeRequestDTO extends BaseRequestDTO {
     private String version;
 
     /**
+     * 远程输入文件存储路径
+     */
+    private String remoteDir;
+
+    /**
+     * 远程输入文件名
+     */
+    private String remoteFileName;
+
+    /**
      * 输出debug
      */
     private Boolean debug;
@@ -57,6 +67,22 @@ public class InvokeRequestDTO extends BaseRequestDTO {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getRemoteDir() {
+        return remoteDir;
+    }
+
+    public void setRemoteDir(String remoteDir) {
+        this.remoteDir = remoteDir;
+    }
+
+    public String getRemoteFileName() {
+        return remoteFileName;
+    }
+
+    public void setRemoteFileName(String remoteFileName) {
+        this.remoteFileName = remoteFileName;
     }
 
     public Boolean getDebug() {

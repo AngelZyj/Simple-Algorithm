@@ -1,6 +1,5 @@
 package com.tsintergy.simple.algorithm.core.process;
 
-import com.tsintergy.tsdl.core.algorithm.invoker.AlgorithmInvokerException;
 
 /**
  * <p>
@@ -13,7 +12,7 @@ public interface Args {
     /**
      * 获取参数
      * @return
-     * @throws AlgorithmInvokerException
+     * @throws
      */
     String getArgsString();
 }

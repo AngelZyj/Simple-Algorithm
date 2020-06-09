@@ -3,6 +3,7 @@ package com.tsintergy.simple.algorithm.service.dao;
 
 import com.tsintergy.simple.algorithm.api.pojo.SolverDO;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author angel

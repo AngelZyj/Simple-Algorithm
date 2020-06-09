@@ -16,12 +16,12 @@ import java.io.IOException;
  */
 public abstract class AbstractStoreManager<T extends BaseFileInfo> implements IStoreManager<T> {
 
-    private boolean validMd5 = true;
+    private boolean validMd5 = false;
 
     @Override
     public void upload(T sourceFile, String localPath) throws StoreException {
         String md5 = null;
-        if(validMd5){
+        if(isValidMd5()){
             try {
                 md5 = Md5ValidUtil.digestMd5(new FileInputStream(localPath));
             } catch (IOException e) {
@@ -35,7 +35,7 @@ public abstract class AbstractStoreManager<T extends BaseFileInfo> implements IS
     @Override
     public File download(T targetFile, String localPath) throws StoreException {
         File file = doDownload(targetFile, localPath);
-        if(validMd5){
+        if(isValidMd5()){
             Md5ValidUtil.valid(localPath, targetFile.getMd5());
         }
         return file;

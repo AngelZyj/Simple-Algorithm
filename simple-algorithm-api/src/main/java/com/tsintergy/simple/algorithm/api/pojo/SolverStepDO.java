@@ -13,15 +13,17 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "TSDL_SOLVER_STEP")
+@Table(name = "TSDL_SOLVER_STEP",uniqueConstraints = {
+        @UniqueConstraint(name = "uindex_olverStep",columnNames = {"SOLVER_ID","STEP_ORDER"})
+})
 public class SolverStepDO implements Serializable {
 
     /**
      * 唯一id
      */
     @Id
-    @Column(name = "Id", length = 32)
-    @GenericGenerator(name = "uuid", strategy = "DEFAULT_STRATEGY")
+    @Column(name = "ID", length = 32)
+    @GenericGenerator(name = "uuid", strategy = "uuid")
     @GeneratedValue(generator = "uuid")
     private String id;
 

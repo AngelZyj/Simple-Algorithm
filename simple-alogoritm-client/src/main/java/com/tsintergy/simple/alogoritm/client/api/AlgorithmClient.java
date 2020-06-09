@@ -1,21 +1,15 @@
-package com.tsintergy.simple.algorithm.api;
-
+package com.tsintergy.simple.alogoritm.client.api;
 
 import com.tsintergy.simple.algorithm.api.dto.InvokeRequestDTO;
 import com.tsintergy.simple.algorithm.api.dto.InvokeResultDTO;
 
 /**
  * @author angel
- * @description 调用服务
- * @date 2020/6/4 10:31
+ * @description
+ * @date 2020/6/9 18:24
  */
-public interface InvokeService {
+public interface AlgorithmClient {
 
-    /**
-     * 调用算法
-     * @param invokeRequestDTO
-     * @return
-     */
     InvokeResultDTO doInvokeAlgorithm(InvokeRequestDTO invokeRequestDTO);
 
 }

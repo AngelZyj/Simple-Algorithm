@@ -12,7 +12,15 @@ import java.io.Serializable;
 @ConfigurationProperties(prefix = "algorithm")
 public class AlgorithmProperties implements Serializable {
 
+    /**
+     * 存储服务配置
+     */
     private StoreProperties store;
+
+    /**
+     * 算法工作路径
+     */
+    private String workspace;
 
     public StoreProperties getStore() {
         return store;
@@ -20,5 +28,13 @@ public class AlgorithmProperties implements Serializable {
 
     public void setStore(StoreProperties store) {
         this.store = store;
+    }
+
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
     }
 }

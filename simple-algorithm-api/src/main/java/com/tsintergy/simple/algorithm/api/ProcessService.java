@@ -1,6 +1,8 @@
 package com.tsintergy.simple.algorithm.api;
 
 
+import com.tsintergy.simple.algorithm.api.dto.InvokeRequestDTO;
+import com.tsintergy.simple.algorithm.api.pojo.SolverDO;
 import com.tsintergy.simple.algorithm.core.process.ProcessArgs;
 
 /**
@@ -10,5 +12,11 @@ import com.tsintergy.simple.algorithm.core.process.ProcessArgs;
  */
 public interface ProcessService {
 
-    void doOpenProcess(ProcessArgs args);
+    /**
+     * 开启算法进程
+     * @param args 进程启动参数
+     * @param invokeRequestDTO 本次请求参数
+     * @param solverDO
+     */
+    void doOpenProcess(ProcessArgs args, InvokeRequestDTO invokeRequestDTO, SolverDO solverDO);
 }

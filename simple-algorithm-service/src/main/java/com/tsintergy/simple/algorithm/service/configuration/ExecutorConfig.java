@@ -20,9 +20,9 @@ public class ExecutorConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(ExecutorConfig.class);
 
+    @ConditionalOnMissingBean/*(value = Executor.class)*/
     @Bean
-    @ConditionalOnMissingBean
-    public Executor ThreadPoolTaskExecutor() {
+    public Executor threadPoolTaskExecutor() {
         logger.info("start algorithm threadPoolTaskExecutor");
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(5);

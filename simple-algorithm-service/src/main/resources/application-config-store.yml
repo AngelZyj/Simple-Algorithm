@@ -12,5 +12,8 @@ algorithm:
       password: ${SFTP_PASSWD:qinghua123%40}
       remoteRootPath: ${ALGORITHM_STORE_ROOT_PATH:/upload/algorithm/files}
     local:
-      basePath: ${ALGORITHM_STORE_ROOT_PATH:'/home/tmos/upload/algorithm/files'}
+      basePath: ${ALGORITHM_STORE_ROOT_PATH:/home/tmos/upload/algorithm/files}
+
+  workspace: ${ALGORITHM_WORKSPACE:/home/tmos/upload/algorithm/workspace}
+
 

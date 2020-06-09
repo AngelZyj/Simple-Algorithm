@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * <p>
@@ -27,6 +28,9 @@ public class ConsoleProcess {
     public static final String STOP_COMMAND = "stop";
 
     private String stopCommand;
+
+    private ConsoleListener consoleListener;
+    private ConsoleListener consoleErrorListener;
 
     Process process;
 
@@ -63,10 +67,10 @@ public class ConsoleProcess {
             process = Runtime.getRuntime().exec(cmd);
 
             //获取进程的标准输入流
-            inputStreamReader = new AsyncInputStreamReader(this, process.getInputStream());
+            inputStreamReader = new AsyncInputStreamReader(this, process.getInputStream(),consoleListener);
 
             //获取进程的错误输入流
-            errorInputStreamReader = new AsyncInputStreamReader(this, process.getErrorStream());
+            errorInputStreamReader = new AsyncInputStreamReader(this, process.getErrorStream(),consoleErrorListener);
 
             inputStreamReader.read();
             errorInputStreamReader.read();
@@ -86,7 +90,7 @@ public class ConsoleProcess {
         } catch (Exception ex) {
             throw new ProcessException("进程出现异常", ex);
         } finally {
-            closeProcess();
+//            closeProcess();
         }
     }
 
@@ -96,6 +100,7 @@ public class ConsoleProcess {
     public void shutdown() throws ProcessException {
         try {
             if (StringUtils.isEmpty(stopCommand)) {
+                closeProcess();
                 process.destroy();
             } else {
                 stopByCommand();
@@ -147,5 +152,21 @@ public class ConsoleProcess {
 
     public void setStopCommand(String stopCommand) {
         this.stopCommand = stopCommand;
+    }
+
+    public ConsoleListener getConsoleListener() {
+        return consoleListener;
+    }
+
+    public void setConsoleListener(ConsoleListener consoleListener) {
+        this.consoleListener = consoleListener;
+    }
+
+    public ConsoleListener getConsoleErrorListener() {
+        return consoleErrorListener;
+    }
+
+    public void setConsoleErrorListener(ConsoleListener consoleErrorListener) {
+        this.consoleErrorListener = consoleErrorListener;
     }
 }
