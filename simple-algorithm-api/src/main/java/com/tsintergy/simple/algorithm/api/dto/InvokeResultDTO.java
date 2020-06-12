@@ -14,7 +14,7 @@ public class InvokeResultDTO extends BaseResultDTO {
     /**
      * 执行情况
      */
-    ActionStatusEnum actionStatus;
+    private ActionStatusEnum actionStatus;
 
     public InvokeResultDTO(String caseId, String actionId,ActionStatusEnum actionStatus) {
         super(caseId,actionId);

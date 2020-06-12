@@ -1,12 +1,11 @@
 package com.tsintergy.simple.algorithm.service.configuration;
 
 import com.tsintergy.simple.algorithm.api.ProcessLogService;
-import com.tsintergy.simple.algorithm.core.process.ConsoleEvent;
-import com.tsintergy.simple.algorithm.core.process.ConsoleListener;
+import com.tsintergy.simple.algorithm.api.ProcessResultService;
 import com.tsintergy.simple.algorithm.service.impl.ProcessLogServiceImpl;
+import com.tsintergy.simple.algorithm.service.impl.ProcessResultServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +26,11 @@ public class SimpleAlgorithmConfig {
         return new ProcessLogServiceImpl();
     }
 
+    @ConditionalOnMissingBean
+    @Bean
+    public ProcessResultService processResultService() {
+        return new ProcessResultServiceImpl();
+    }
 
 
 }

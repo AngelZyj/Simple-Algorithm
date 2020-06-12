@@ -1,9 +1,13 @@
 package com.tsintergy.simple.algorithm.core.process;
 
+import com.tsintergy.simple.algorithm.core.process.listener.ConsoleEvent;
+import com.tsintergy.simple.algorithm.core.process.listener.ConsoleListener;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.time.LocalDateTime;
@@ -57,15 +61,13 @@ public class AsyncInputStreamReader {
                         listener.onError("读取标准输出流出错", e);
                     }
                 } finally {
-                    if (inputStream != null) {
                         try {
-                            inputStream.close();
-                        } catch (Exception e) {
+                            IOUtils.close(inputStream);
+                        } catch (IOException e) {
                             logger.error("标准输出流关闭失败", e);
                         }
-                    }
                 }
-            }
+                }
         }).start();
     }
 

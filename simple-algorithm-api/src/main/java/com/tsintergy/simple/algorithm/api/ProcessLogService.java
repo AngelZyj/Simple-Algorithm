@@ -2,7 +2,7 @@ package com.tsintergy.simple.algorithm.api;
 
 /**
  * @author angel
- * @description
+ * @description 控制台进程日志的处理服务类
  * @date 2020/6/9 14:24
  */
 public interface ProcessLogService {

@@ -1,4 +1,6 @@
-package com.tsintergy.simple.algorithm.core.process;
+package com.tsintergy.simple.algorithm.core.process.listener;
+
+import com.tsintergy.simple.algorithm.core.process.ConsoleProcess;
 
 /**
  * <p>

@@ -1,4 +1,4 @@
-package com.tsintergy.simple.algorithm.core.process;
+package com.tsintergy.simple.algorithm.core.process.listener;
 
 /**
  * <p>
