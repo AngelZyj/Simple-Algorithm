@@ -27,7 +27,7 @@
         <springframework.version>2.3.0.RELEASE</springframework.version>
         <dubbo.starter.version>2.7.7</dubbo.starter.version>
         <curator.version>5.0.0</curator.version>
-        <zookeeper.version>3.6.1</zookeeper.version>
+        <zookeeper.version>3.7.2</zookeeper.version>
     </properties>
 
     <modules>
